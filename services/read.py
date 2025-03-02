@@ -13,7 +13,7 @@ def registre():
             "name":"Josep Oriol",
             "surname":"Roca",
             "age":23
-        }
+        },
         "user3": {
             "id":3,
             "name":"Juan Manuel",
