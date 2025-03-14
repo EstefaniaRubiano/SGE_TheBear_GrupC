@@ -1,12 +1,11 @@
 from typing import List
 from fastapi import FastAPI, Depends
-from psycopg2.errorcodes import DATABASE_DROPPED
-
 from services import read
 from sqlmodel import SQLModel, create_engine, Session
 from dotenv import load_dotenv
 from services import user
 import os
+
 
 # Crear l'aplicació FastAPI
 app = FastAPI()

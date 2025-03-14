@@ -12,5 +12,5 @@ def add_new_user(name: str, email:str, db:Session):
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
-    return {"Created user succesfully"}
+    return {"message": "Created user successfully"}
 
