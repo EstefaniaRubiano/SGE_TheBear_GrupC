@@ -20,5 +20,9 @@ En aquesta captura es mostra l’ús de l’endpoint POST /users, que permet afe
 
 <img src="fastapi2.png" width="800">
 
+---
+### Resultats
+En aquesta captura es mostra el resultat del mètode POST
 
+<img src="DB.png" width="800">
 
