@@ -14,6 +14,7 @@ Finalment, a l'última imatge es pot veure la resposta d'aquesta petició, un JS
 ---
 
 ## FASTAPI + DB
+![fastapi1](https://github.com/user-attachments/assets/6998c778-0295-4246-adda-9dc21c08ac02)
 
 La següent imatge mostra la interfície Swagger UI de FastAPI, on s'està executant una petició 'GET' a la ruta '/users'.
 Aquesta eina permet fer sol·licituds directament des del navegador per comprovar si l’API està funcionant correctament.
@@ -23,11 +24,13 @@ La resposta mostra una llista d’usuaris amb noms i correus electrònics.
 
 
 
+![fastapi2](https://github.com/user-attachments/assets/91ee4d47-6820-4508-8cb4-0c345839589b)
 
 En aquesta segona imatge s’està fent una sol·licitud POST per crear un nou usuari, des de la mateixa interfície de Swagger. 
 Per fer aixó cal introduïr les dades del nou usuari, es a dir, el nom i el correu electrònic. Després d’executar la sol·licitud, la resposta mostra el missatge "Created user successfully", cosa que indica que l’usuari s’ha afegit correctament a la base de dades. 
 
 
+![fastapi3](https://github.com/user-attachments/assets/a895233b-1ecb-40ac-9631-fe2659b5c87b)
 
 L'ultima imatge mostra la pagina de pgAdmin, que és una eina per gestionar bases de dades PostgreSQL. 
 A la imatge, s’està executant una consulta SQL per mostrar tots els registres de la taula user, 
