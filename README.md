@@ -15,8 +15,7 @@ Finalment, a l'última imatge es pot veure la resposta d'aquesta petició, un JS
 
 ## FASTAPI + DB
 
-![fastapi1.jpeg](../captura%20final/fastapi1.jpeg)
-
+![](C:\Users\Alba Melendres\Desktop\SGE_A_Python\python activitat 6\captura final\fastapi1.jpeg)
 La següent imatge mostra la interfície Swagger UI de FastAPI, on s'està executant una petició 'GET' a la ruta '/users'.
 Aquesta eina permet fer sol·licituds directament des del navegador per comprovar si l’API està funcionant correctament.
 
@@ -25,14 +24,12 @@ La resposta mostra una llista d’usuaris amb noms i correus electrònics.
 
 
 
-![fastapi2.jpeg](../captura%20final/fastapi2.jpeg)
-
+![](C:\Users\Alba Melendres\Desktop\SGE_A_Python\python activitat 6\captura final\fastapi2.jpeg)
 En aquesta segona imatge s’està fent una sol·licitud POST per crear un nou usuari, des de la mateixa interfície de Swagger. 
 Per fer aixó cal introduïr les dades del nou usuari, es a dir, el nom i el correu electrònic. Després d’executar la sol·licitud, la resposta mostra el missatge "Created user successfully", cosa que indica que l’usuari s’ha afegit correctament a la base de dades. 
 
 
-![fastapi3.jpeg](../captura%20final/fastapi3.jpeg)
-
+![](C:\Users\Alba Melendres\Desktop\SGE_A_Python\python activitat 6\captura final\fastapi3.jpeg)
 L'ultima imatge mostra la pagina de pgAdmin, que és una eina per gestionar bases de dades PostgreSQL. 
 A la imatge, s’està executant una consulta SQL per mostrar tots els registres de la taula user, 
 ordenats pel camp id. Els resultats mostren que hi ha 10 registres en total, que són tots els usuaris introduïts al pas anterior, 
