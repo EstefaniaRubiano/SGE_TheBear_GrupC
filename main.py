@@ -39,3 +39,12 @@ def read_user(db:Session = Depends(get_db)):
 def create_user(name: str, email:str, db:Session = Depends(get_db)):
     result = user.add_new_user(name, email, db)
     return result
+
+# 7. Endpoint per modificar alguna dada de l'usuari
+
+@app.put("/usuari/{id}", response_model=dict)
+async def update_user(user_id: int, new_name: str, db: Session = Depends(get_db)):
+    updated_user = update_user(user_id, new_name, db)
+
+    return {"message": "Usuari actualitzat correctament", "user": updated_user}
+
