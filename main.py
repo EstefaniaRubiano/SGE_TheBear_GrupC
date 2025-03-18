@@ -1,6 +1,10 @@
 from typing import List
 from fastapi import FastAPI
 from services import read
+from sqlmodel import SQLModel, create_engine, Session
+from dotenv import load_dotenv
+from services import users
+import os
 
 app = FastAPI()
 
