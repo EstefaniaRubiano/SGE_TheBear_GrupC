@@ -4,9 +4,9 @@ services:
    image: postgres:13
    container_name: db_erp
    environment:
-     - POSTGRES_DB= the_bear
-     - POSTGRES_PASSWORD= admin
-     - POSTGRES_USER= admin
+     - POSTGRES_DB=the_bear
+     - POSTGRES_PASSWORD=admin
+     - POSTGRES_USER=admin
    ports:
      - "5432:5432"
    volumes:

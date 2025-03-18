@@ -1,5 +1,7 @@
 from typing import List
 from fastapi import FastAPI, Depends
+from sqlalchemy import result_tuple
+
 from services import read
 from sqlmodel import SQLModel, create_engine, Session
 from dotenv import load_dotenv
@@ -37,6 +39,13 @@ def read_user(db:Session = Depends(get_db)):
 
 # 7. Endpoint per afegir usuaris
 @app.post("/users/", response_model= dict)
-def read_user(name: str, email:str, db:Session = Depends(get_db)):
+def create_user(name: str, email:str, db:Session = Depends(get_db)):
     result = user.add_new_user(name, email, db)
     return result
+
+#8.endpoint per modificar dades dels usuaris
+@app.put("/usuari/{id}", response_model=list[dict])
+async def update_user(user_id: int, new_name: str, db: Session = Depends(get_db)):
+    updated_user = update_user(user_id, new_name, db)
+
+    return {"message": "Usuari actualitzat correctament", "user": updated_user}

@@ -12,4 +12,15 @@ def add_new_user(name: str, email:str, db:Session):
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
-    return {"Created user succesfully"}
+    return {"message": "Created user succesfully"}
+
+def update_user(user_id: int, new_name: str, db: Session):
+    statement = select(User).where(User.id == user_id)
+    results = db.exec(statement)
+    user = results.one()
+    user.name = new_name
+    db.add(user)
+    db.commit()
+    print("Update user:", user)
+    return {"message": "Updated user successfully"}
+
