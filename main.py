@@ -33,5 +33,5 @@ def create_user(name: str, email: str, db:Session = Depends(get_db)):
 
 @app.put("/users/", response_model=dict)
 async def update_user(id: int, email: str, db:Session = Depends(get_db)):
-    result = users.update_user(id, email, db)
+    result = await users.update_user(id, email, db)
     return result

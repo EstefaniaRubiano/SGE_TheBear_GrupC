@@ -15,12 +15,11 @@ def add_new_user(name:str, email:str, db:Session):
     return {"message": "Created user succesfully"}
 
 async def update_user (id: int, email:str, db: Session):
-    with Session(engine) as session:
         statement = select(User) .where(User.id == id)
-        result = Session.exec(statement)
+        result = db.exec(statement)
         user = result.one()
-        user.email = "abigail@gmail.com"
-        Session.add(user)
-        Session.commit()
-        Session.refresh(user)
+        user.email = email
+        db.add(user)
+        db.commit()
+        db.refresh(user)
         return {"message": "Updated succesfully"}
