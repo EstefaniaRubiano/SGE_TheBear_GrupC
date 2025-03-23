@@ -1,5 +1,7 @@
 # SGE_TheBear_GrupC
 
+---
+
 ## PRIMERES PASSES
 ![Captura 3](https://github.com/user-attachments/assets/d4935888-6e82-477a-b5fd-01f46a7e347b)
 En aquesta captura es pot veure tot el codi del projecte, fet a PyCharm. En 'main.py', s'està configurant FastAPI i definint l'endpoint 'GET /root' que retorna el resultat de la funció 'registre()' del mòdul 'read.py'. Aquesta funció crea un diccionari amb dades de tres usuaris. 
@@ -36,3 +38,22 @@ L'ultima imatge mostra la pagina de pgAdmin, que és una eina per gestionar base
 A la imatge, s’està executant una consulta SQL per mostrar tots els registres de la taula user, 
 ordenats pel camp id. Els resultats mostren que hi ha 10 registres en total, que són tots els usuaris introduïts al pas anterior, 
 cosa que confirma que s’han afegit correctament a la base de dades, que els endpoints de FastAPI estan funcionant bé i que les dades s’estan guardant i recuperant de manera adequada.
+
+---
+
+## CRUD TAULA USER
+<img src="../captura%20final/update.png">
+A la primera imatge es mostra la interfície Swagger UI de FastAPI, on s'està executant una 
+petició de tipus PUT a la ruta /update_user/, que s'utilitza per actualitzar la informació d'un usuari. 
+En aquest cas, s'ha enviat un id=2 juntament amb el nou nom. En executar la petició, el servidor ha 
+respost amb un codi 200, indicant que l'actualització s'ha realitzat correctament. Al cos de la 
+resposta JSON apareix el missatge de confirmació de que les dades de l'usuari amb ID 2 s'han modificat 
+correctament.
+
+<img src="../captura%20final/delete.png">
+A la segona imatge es mostra també la interfície Swagger UI de FastAPI, on s'està executant una 
+petició de tipus  DELETE a la ruta /user/delete/, que serveix per eliminar un usuari mitjançant 
+el seu identificador (id). S'ha introduït el valor 6 com a paràmetre, i al executar la petició, 
+el servidor ha respost amb un codi 200, indicant que l'operació s'ha completat amb èxit. 
+Al cos de la resposta es confirma l'eliminació amb el missatge que hem indicat previament al codi
+"Deleted user successfully", la qual cosa significa que l'usuari amb ID 6 ha estat eliminat correctament.

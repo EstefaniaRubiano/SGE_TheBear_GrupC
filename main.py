@@ -44,8 +44,13 @@ def create_user(name: str, email:str, db:Session = Depends(get_db)):
     return result
 
 #8.endpoint per modificar dades dels usuaris
-@app.put("/usuari/{id}", response_model=list[dict])
-async def update_user(user_id: int, new_name: str, db: Session = Depends(get_db)):
-    updated_user = update_user(user_id, new_name, db)
+@app.put("/update_user/", response_model=dict)
+async def update_user(id:int,name:str, db:Session = Depends(get_db)):
+    result = user.update_user(id, name, db)
+    return result
 
-    return {"message": "Usuari actualitzat correctament", "user": updated_user}
+#8.endpoint per eliminar dades dels usuaris
+@app.delete("/user/delete/", response_model=dict)
+async def delete_user(id:int, db:Session = Depends(get_db)):
+    result = user.delete_user(id, db)
+    return result
