@@ -42,6 +42,7 @@ cosa que confirma que s’han afegit correctament a la base de dades, que els en
 ---
 
 ## CRUD TAULA USER
+![update](https://github.com/user-attachments/assets/c13d098b-0250-40e5-ae86-afcbdfeb6da8)
 
 A la primera imatge es mostra la interfície Swagger UI de FastAPI, on s'està executant una 
 petició de tipus PUT a la ruta /update_user/, que s'utilitza per actualitzar la informació d'un usuari. 
@@ -50,6 +51,7 @@ respost amb un codi 200, indicant que l'actualització s'ha realitzat correctame
 resposta JSON apareix el missatge de confirmació de que les dades de l'usuari amb ID 2 s'han modificat 
 correctament.
 
+![delete](https://github.com/user-attachments/assets/2014f984-cc05-4c91-b909-def7e0384644)
 
 A la segona imatge es mostra també la interfície Swagger UI de FastAPI, on s'està executant una 
 petició de tipus  DELETE a la ruta /user/delete/, que serveix per eliminar un usuari mitjançant 
