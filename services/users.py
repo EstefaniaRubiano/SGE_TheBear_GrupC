@@ -23,3 +23,11 @@ async def update_user (id: int, email:str, db: Session):
         db.commit()
         db.refresh(user)
         return {"message": "Updated succesfully"}
+
+def delete_user(id:int, db:Session):
+    sql_select = select(User).where(User.id == id)
+    user_db = db.exec(sql_select).one()
+
+    db.delete(user_db)
+    db.commit()
+    return {"message":"Deleted user succesfully"}

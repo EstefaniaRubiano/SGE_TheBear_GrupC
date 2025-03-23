@@ -28,3 +28,7 @@ GET per veure els usuaris ja emmagatzemats a la base de dades
 A través d'un endpoint PUT, l'usuari pot modificar el seu correu electrònic mitjançant el seu ID. L'endpoint retorna un diccionari amb un missatge que indica si l'actualització ha estat correcta
 
 ![PUT](./Captures/PUT.png)
+
+L'últim endpoint afegeix la funcionalitat per eliminar usuaris de la base de dades. Com es pot veure en l'exemple, utilitzant el seu ID, l'usuari pot ser eliminat de manera eficient
+
+![DELETE](./Captures/DELETE.png)

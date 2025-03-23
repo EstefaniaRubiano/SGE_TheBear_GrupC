@@ -35,3 +35,8 @@ def create_user(name: str, email: str, db:Session = Depends(get_db)):
 async def update_user(id: int, email: str, db:Session = Depends(get_db)):
     result = await users.update_user(id, email, db)
     return result
+
+@app.delete("/user/delete", response_model=dict)
+async def delete_user(id:int, db:Session = Depends(get_db)):
+    result = users.delete_user(id, db)
+    return result
