@@ -42,7 +42,7 @@ cosa que confirma que s’han afegit correctament a la base de dades, que els en
 ---
 
 ## CRUD TAULA USER
-<img src="../captura%20final/update.png">
+
 A la primera imatge es mostra la interfície Swagger UI de FastAPI, on s'està executant una 
 petició de tipus PUT a la ruta /update_user/, que s'utilitza per actualitzar la informació d'un usuari. 
 En aquest cas, s'ha enviat un id=2 juntament amb el nou nom. En executar la petició, el servidor ha 
@@ -50,7 +50,7 @@ respost amb un codi 200, indicant que l'actualització s'ha realitzat correctame
 resposta JSON apareix el missatge de confirmació de que les dades de l'usuari amb ID 2 s'han modificat 
 correctament.
 
-<img src="../captura%20final/delete.png">
+
 A la segona imatge es mostra també la interfície Swagger UI de FastAPI, on s'està executant una 
 petició de tipus  DELETE a la ruta /user/delete/, que serveix per eliminar un usuari mitjançant 
 el seu identificador (id). S'ha introduït el valor 6 com a paràmetre, i al executar la petició, 
