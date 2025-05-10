@@ -1,9 +1,25 @@
 """
-Aquest arxiu s'encarrega de transformar
-les dades del parametre "gastos" (en format
-List) a un format diccionari.
+Este archivo de envarga de transformar
+los datos del parametro "gasto" (en formato
+List) a formato diccionario.
 """
 
-def schema(gastos) -> dict:
-    send_gastos = {"id":gastos["id"]
+def schema(gasto) -> dict:
+    send_gasto = {"id":gasto["id"],
+                   "proveedor":gasto["proveedor"],
+                   "producto":gasto["producto"],
+                   "cantidad":gasto["cantidad"],
+                   "precio": gasto["precio"],
+                   "subtotal": gasto["subtotal"],
+                   "fecha": gasto["fecha"],
+                   "estado": gasto["estado"]
                    }
+    return send_gasto
+
+"""
+Esta función devuelve una lista que contiene 
+un diccionario con la información de los 
+gastos.
+"""
+def schemas(gastos) -> list[dict]:
+    return [schema(gasto) for k,gasto in gastos.items()]
