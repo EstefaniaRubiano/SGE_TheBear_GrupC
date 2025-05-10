@@ -4,15 +4,13 @@ los datos del parametro "gasto" (en formato
 List) a formato diccionario.
 """
 
-def schema(gasto) -> dict:
-    send_gasto = {"id":gasto["id"],
-                   "proveedor":gasto["proveedor"],
-                   "producto":gasto["producto"],
-                   "cantidad":gasto["cantidad"],
-                   "precio": gasto["precio"],
-                   "subtotal": gasto["subtotal"],
-                   "fecha": gasto["fecha"],
-                   "estado": gasto["estado"]
+def schema_gasto(gasto) -> dict:
+    send_gasto = {"id": gasto["id"],
+                "descripcion": gasto["descripcion"],
+                "categoria": gasto["categoria"],
+                "importe": gasto["importe"],
+                "fecha": gasto["fecha"]
+
                    }
     return send_gasto
 
@@ -21,5 +19,5 @@ Esta función devuelve una lista que contiene
 un diccionario con la información de los 
 gastos.
 """
-def schemas(gastos) -> list[dict]:
-    return [schema(gasto) for k,gasto in gastos.items()]
+def schemas_gastos(gastos) -> list[dict]:
+    return [schema_gasto(gasto) for k,gasto in gastos.items()]
