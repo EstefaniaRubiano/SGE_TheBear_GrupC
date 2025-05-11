@@ -23,7 +23,7 @@ def add_new_evento(nombre: str, fecha: str, lugar: str, descripcion: str, respon
     db.add(db_evento)
     db.commit()
     db.refresh(db_evento)
-    return {"Evento añadido correctamente"}
+    return evento_schema("Evento añadido correctamente")
 
 # Actualizar evento por ID
 def update_evento(evento_id: int, nuevo_lugar: str, db: Session):
