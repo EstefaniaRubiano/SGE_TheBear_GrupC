@@ -23,7 +23,7 @@ def add_new_empleado(nombre: str, puesto: str, email: str, telefono: str, db: Se
     db.add(db_empleado)
     db.commit()
     db.refresh(db_empleado)
-    return {"Empleado añadido correctamente"}
+    return empleado_schema("Empleado añadido correctamente")
 
 # Actualizar empleado por ID
 def update_empleado(id: int, nuevo_nombre: str, db: Session):
