@@ -1,9 +1,22 @@
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from fastapi import FastAPI, Depends
 from sqlmodel import SQLModel, create_engine, Session
 from dotenv import load_dotenv
 from services import compras, gastos, evento, empleado
 from models import Compras, Gastos, Evento, Empleado
 import os
+
+
+app = FastAPI()
+
+#Servir archivos estáticos
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+#Ruta para servir el main_page.html por defecto
+@app.get("/")
+async def root():
+    return FileResponse("static/main_page.html")
 
 app = FastAPI()
 
