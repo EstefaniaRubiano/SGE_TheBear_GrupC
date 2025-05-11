@@ -1,5 +1,7 @@
 # SGE_TheBear_GrupC
 
 ## Disseny Bases de Dades 
-<img src="Disseny_SGE.drawio.png" width="800">
->>>>>>> main
+<img src="DIAGRAMA_NEW.drawio (2).png" width="800">
+
+
+
