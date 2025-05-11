@@ -1,23 +1,11 @@
-"""
-Este archivo de envarga de transformar
-los datos del parametro "compra" (en formato
-List) a formato diccionario.
-"""
+def producto_schema(producto) -> dict:
+    return {"producto": producto}
 
-def schema(compra) -> dict:
-    send_compra = {"id":compra["id"],
-                   "descripcion":compra["proveedor"],
-                   "categoria":compra["producto"],
-                   "importe":compra["cantidad"],
-                   "fecha": compra["fecha"]
+def productos_schema(productos) -> list[dict]:
+    return [producto_schema(producto) for producto in productos]
 
-                   }
-    return send_compra
+def pedido_schema(pedido) -> dict:
+    return {"pedido": pedido}
 
-"""
-Esta función devuelve una lista que contiene 
-un diccionario con la información de las 
-compras.
-"""
-def schemas(compras) -> list[dict]:
-    return [schema(compra) for k,compra in compras.items()]
+def pedidos_schema(pedidos) -> list[dict]:
+    return [pedido_schema(pedido) for pedido in pedidos]
