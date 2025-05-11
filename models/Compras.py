@@ -12,9 +12,9 @@ class Producto(SQLModel, table=True):
     stock: int
 
 class Pedido(SQLModel, table=True):
-    #Representa una compra realizada por un empleado
+    #Representa un pedido realizado por un empleado
     id: int = Field(default=None, primary_key=True)
     fecha: str
     precio_total: float
-    id_empleado: int = Field(foreign_key="empleado.id")
-    id_producto: int = Field(foreign_key="producto.id")
+    id_empleado: int
+    id_producto: int

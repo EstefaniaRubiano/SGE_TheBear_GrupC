@@ -1,23 +1,7 @@
-"""
-Este archivo de envarga de transformar
-los datos del parametro "gasto" (en formato
-List) a formato diccionario.
-"""
+def gasto_schema(gasto) -> dict:
+    return {"gasto": gasto}
 
-def schema_gasto(gasto) -> dict:
-    send_gasto = {"id": gasto["id"],
-                "descripcion": gasto["descripcion"],
-                "categoria": gasto["categoria"],
-                "importe": gasto["importe"],
-                "fecha": gasto["fecha"]
+def gastos_schema(gastos) -> list[dict]:
+    return [gasto_schema(gasto) for gasto in gastos]
 
-                   }
-    return send_gasto
 
-"""
-Esta función devuelve una lista que contiene 
-un diccionario con la información de los 
-gastos.
-"""
-def schemas_gastos(gastos) -> list[dict]:
-    return [schema_gasto(gasto) for k,gasto in gastos.items()]
