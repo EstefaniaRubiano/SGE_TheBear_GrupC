@@ -34,17 +34,17 @@ async def read_gastos_id(id: int, db: Session = Depends(get_db)):
 
 @app.post("/gastos/post", response_model=dict)
 async def create_gastos(descripcion: str, categoria: str, importe: float, fecha: str, db: Session = Depends(get_db)):
-    result = gastos.add_new_gastos(descripcion, categoria, importe, fecha, db)
+    result = gastos.add_new_gasto(descripcion, categoria, importe, fecha, db)
     return result
 
 @app.put("/gastos/put", response_model=dict)
 async def update_gastos_categoria(id: int, nueva_categoria: str, db: Session = Depends(get_db)):
-    result = gastos.update_gastos(id, nueva_categoria, db)
+    result = gastos.update_gasto(id, nueva_categoria, db)
     return result
 
 @app.delete("/gastos/delete", response_model=dict)
 async def delete_gastos_id(id: int, db: Session = Depends(get_db)):
-    result = gastos.delete_gastos(id, db)
+    result = gastos.delete_gasto(id, db)
     return result
 
 
