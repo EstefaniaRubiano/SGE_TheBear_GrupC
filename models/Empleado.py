@@ -7,4 +7,4 @@ class Empleado(SQLModel, table=True):
     nombre: str
     puesto: str
     email: str
-    telefono: str
+    telefono: int
