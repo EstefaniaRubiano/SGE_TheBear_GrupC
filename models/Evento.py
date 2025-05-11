@@ -8,4 +8,4 @@ class Evento(SQLModel, table=True):
     fecha: str
     lugar: str
     descripcion: str
-    responsable_id: int = Field(foreign_key="empleado.id")
+    responsable_id: int

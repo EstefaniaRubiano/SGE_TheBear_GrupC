@@ -1,15 +1,9 @@
-# Este archivo se encarga de transformar los datos del parámetro empleado
-# (en formato list) a un formato diccionario con los campos que queremos mostrar
+# Devuelve un diccionario con un único empleado
+def empleado_schema(empleado) -> dict:
+    response = {"empleado": empleado}
+    return response
 
-def schema(empleado) -> dict:
-    send_empleado = {
-        "id": empleado["id"],
-        "nombre": empleado["nombre"],
-        "puesto": empleado["puesto"],
-        "email": empleado["email"],
-        "telefono": empleado["telefono"]
-    }
-    return send_empleado
-
-def schemas(empleados) -> list[dict]:
-    return [schema(empleado) for k, empleado in empleados.items()]
+# Devuelve una lista de diccionarios, cada uno con un empleado
+def empleados_schema(empleados) -> list[dict]:
+    response = [empleado_schema(empleado) for empleado in empleados]
+    return response
