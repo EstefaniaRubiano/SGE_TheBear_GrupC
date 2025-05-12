@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nuevo Empleado</title>
+    <link rel="stylesheet" href="style_form.css">
+</head>
+
+<body>
+    <div class="erp-container">
+            <!-- Capçalera Odoo-style -->
+            <header class="erp-header">
+                <div class="erp-logo">ERP System</div>
+                <nav class="erp-nav">
+                    <a href="../main_page.html" class="active">Inicio</a>
+                    <a href="../empleados/index_form.html">Empleados</a>
+                    <a href="../eventos/index_form.html">Eventos</a>
+                    <a href="../gastos/index_form.html">Gastos</a>
+                    <a href="../pedidos/index_form.html">Pedidos</a>
+                    <a href="../productos/index_form.html">Productos</a>
+                </nav>
+                <div class="erp-user">Admin</div>
+            </header>
+        <div class="container">
+            <h1>Crear Nuevo Empleado</h1>
+            <form id="empleadoForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="puesto">Puesto:</label>
+                    <input type="text" id="puesto" name="puesto" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+
+                 <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="number" id="telefono" name="telefono" required>
+                 </div>
+
+                <button type="submit">Crear Empleado</button>
+                </br></br>
+                <div class="action-buttons">
+                <button><a href="index_table_users.html" class="action-btn">
+                    MOSTRAR TABLA EMPLEADOS
+                </a></button>
+             </div>
+            </form>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+
+    <script src="script_form.js"></script>
+</body>
+</html>

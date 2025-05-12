@@ -47,7 +47,7 @@ def add_new_producto(nombre: str, precio: float, cantidad: int, stock: int, db: 
     return producto_schema("Producto añadido correctamente")
 
 #Añadir nuevo pedido
-def add_new_pedido(fecha: str, precio_total: float, id_empleado: int,  db: Session):
+def add_new_pedido(fecha: str, precio_total: float, id_empleado: int, db: Session):
     db_pedido = Pedido(fecha=fecha, precio_total=precio_total, id_empleado=id_empleado)
     db.add(db_pedido)
     db.commit()
