@@ -1,5 +1,4 @@
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, Depends
 from sqlmodel import SQLModel, create_engine, Session
 from dotenv import load_dotenv
@@ -7,26 +6,29 @@ from services import compras, gastos, evento, empleado
 from models import Compras, Gastos, Evento, Empleado
 import os
 
-
+# Creación del FastAPI
 app = FastAPI()
 
-#Servir archivos estáticos
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-#Ruta para servir el main_page.html por defecto
-@app.get("/")
-async def root():
-    return FileResponse("static/main_page.html")
-
-app = FastAPI()
-
+# Cargar las variables de entorno
 load_dotenv()
-
+# Obtener variable de entorno
 DATABASE_URL = os.getenv("DATABASE_URL")
+# Crear engine para la gestión de la DB
 engine = create_engine(DATABASE_URL)
 
+# Crear automáticamente las tablas a la base de datos
 SQLModel.metadata.create_all(engine)
 
+# Añadir middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Obtener la sesión de la base de datos
 def get_db():
     db = Session(engine)
     try:
@@ -60,7 +62,6 @@ async def delete_gastos_id(id: int, db: Session = Depends(get_db)):
     result = gastos.delete_gasto(id, db)
     return result
 
-
 # Endpoints para productos
 @app.get("/productos/", response_model=list[dict])
 async def read_productos(db: Session = Depends(get_db)):
@@ -87,7 +88,6 @@ async def delete_producto_id(id: int, db: Session = Depends(get_db)):
     result = compras.delete_producto(id, db)
     return result
 
-
 # Endpoints para pedidos
 @app.get("/pedidos/", response_model=list[dict])
 async def read_pedidos(db: Session = Depends(get_db)):
@@ -100,8 +100,8 @@ async def read_pedido_id(id: int, db: Session = Depends(get_db)):
     return result
 
 @app.post("/pedidos/post", response_model=dict)
-async def create_pedido(fecha: str, precio_total: float, id_empleado: int, id_producto: int, db: Session = Depends(get_db)):
-    result = compras.add_new_pedido(fecha, precio_total, id_empleado, id_producto, db)
+async def create_pedido(fecha: str, precio_total: float, id_empleado: int, db: Session = Depends(get_db)):
+    result = compras.add_new_pedido(fecha, precio_total, id_empleado, db)
     return result
 
 @app.put("/pedidos/put", response_model=dict)
@@ -113,9 +113,6 @@ async def update_pedido_precio(id: int, nuevo_precio: float, db: Session = Depen
 async def delete_pedido_id(id: int, db: Session = Depends(get_db)):
     result = compras.delete_pedido(id, db)
     return result
-
-
-
 
 #Endpoints para empleados:
 @app.get("/empleados/", response_model=list[dict])
@@ -129,7 +126,7 @@ async def read_empleado_id(id: int, db: Session = Depends(get_db)):
     return result
 
 @app.post("/empleados/post", response_model=dict)
-async def create_empleado(nombre: str, puesto: str, email: str, telefono: str, db: Session = Depends(get_db)):
+async def create_empleado(nombre: str, puesto: str, email: str, telefono: int, db: Session = Depends(get_db)):
     result = empleado.add_new_empleado(nombre, puesto, email, telefono, db)
     return result
 

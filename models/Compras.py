@@ -17,4 +17,3 @@ class Pedido(SQLModel, table=True):
     fecha: str
     precio_total: float
     id_empleado: int
-    id_producto: int
