@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nuevo Pedido</title>
+    <link rel="stylesheet" href="style_form.css">
+</head>
+<body>
+    <div class="erp-container">
+            <!-- Capçalera Odoo-style -->
+            <header class="erp-header">
+                <div class="erp-logo">ERP System</div>
+                <nav class="erp-nav">
+                    <a href="../main_page.html" class="active">Inici</a>
+                    <a href="../empleados/index_form.html">Empleados</a>
+                    <a href="../eventos/index_form.html">Eventos</a>
+                    <a href="../gastos/index_form.html">Gastos</a>
+                    <a href="../pedidos/index_form.html">Pedidos</a>
+                    <a href="../productos/index_form.html">Productos</a>
+                </nav>
+                <div class="erp-user">Admin</div>
+            </header>
+        <div class="container">
+            <h1>Crear Nuevo Pedido</h1>
+            <form id="pedidoForm">
+                <div class="form-group">
+                    <label for="fecha">Fecha:</label>
+                    <input type="text" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio_total">Precio total:</label>
+                    <input type="number" id="precio_total" name="precio_total" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_empleado">id empleado:</label>
+                    <input type="number" id="id_empleado" name="id_empleado" required>
+                </div>
+
+                <button type="submit">Crear Pedido</button>
+                </br></br>
+                <div class="action-buttons">
+                <button><a href="index_table_users.html" class="action-btn">
+                    MOSTRAR TABLA GASTOS
+                </a></button>
+             </div>
+            </form>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+
+    <script src="script_form.js"></script>
+</body>
+</html>
